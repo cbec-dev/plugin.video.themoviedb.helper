@@ -313,6 +313,8 @@ class Container:
         Runs different functions depending on ?info= param
         """
         if self.params:
+            if self.params.get('exclude_key'):
+                utils.kodi_log('Exclude paramstring: {0}'.format(self.paramstring), 1)
             if self.params.get('info') == 'textviewer':
                 xbmcgui.Dialog().textviewer('$INFO[ListItem.Label]', '$INFO[ListItem.Plot]')
             elif self.params.get('info') == 'imageviewer':
