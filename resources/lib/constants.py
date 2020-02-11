@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 VALID_FILECHARS = "-_.() abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 LANGUAGES = [
@@ -11,17 +13,17 @@ LANGUAGES = [
 
 TYPE_CONVERSION = {
     'movie': {
-        'plural': 'Movies',
+        'plural': 'Películas',
         'container': 'movies',
         'trakt': 'movie',
         'dbtype': 'movie'},
     'tv': {
-        'plural': 'TV Shows',
+        'plural': 'Series',
         'container': 'tvshows',
         'trakt': 'show',
         'dbtype': 'tvshow'},
     'person': {
-        'plural': 'People',
+        'plural': 'Personas',
         'container': 'actors',
         'trakt': '',
         'dbtype': 'video'},
@@ -31,22 +33,22 @@ TYPE_CONVERSION = {
         'trakt': '',
         'dbtype': ''},
     'image': {
-        'plural': 'Images',
+        'plural': 'Imágenes',
         'container': 'images',
         'trakt': '',
         'dbtype': 'image'},
     'genre': {
-        'plural': 'Genres',
+        'plural': 'Géneros',
         'container': 'genres',
         'trakt': '',
         'dbtype': 'genre'},
     'season': {
-        'plural': 'Seasons',
+        'plural': 'Temporadas',
         'container': 'seasons',
         'trakt': 'season',
         'dbtype': 'season'},
     'episode': {
-        'plural': 'Episodes',
+        'plural': 'Episodios',
         'container': 'episodes',
         'trakt': 'episode',
         'dbtype': 'episode'},
@@ -60,91 +62,110 @@ BASEDIR_MAIN = [
     {
         'info': 'dir_movie',
         'name': 'Movies',
+        'spa': 'Películas',
         'icon': '{0}/resources/icons/tmdb/movies.png'},
     {
         'info': 'dir_tv',
         'name': 'TV Shows',
+        'spa': 'Series',
         'icon': '{0}/resources/icons/tmdb/tv.png'},
     {
         'info': 'dir_person',
         'name': 'People',
+        'spa': 'Personas',
         'icon': '{0}/resources/icons/tmdb/cast.png'},
     {
         'info': 'dir_random',
         'name': 'Randomised',
+        'spa': 'Aleatorio',
         'icon': '{0}/resources/poster.png'},
     {
         'info': 'dir_discover',
         'name': 'Discover',
+        'spa': 'Descubre',
         'icon': '{0}/resources/poster.png'},
     {
         'info': 'dir_tmdb',
         'name': 'TheMovieDb',
+        'spa': 'TheMovieDb',
         'icon': '{0}/resources/poster.png'},
     {
         'info': 'dir_trakt',
         'name': 'Trakt',
+        'spa': 'Trakt',
         'icon': '{0}/resources/trakt.png'}]
 
 BASEDIR_TMDB = [
     {
         'info': 'dir_search',
         'name': 'Search{1}{0}',
+        'spa': 'Buscar{1}{0}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/search.png'},
     {
         'info': 'popular',
         'name': 'Popular{1}{0}',
+        'spa': 'Popular{1}{0}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/popular.png'},
     {
         'info': 'top_rated',
         'name': 'Top Rated{1}{0}',
+        'spa': '{1}{0}Mejor Calificadas',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/toprated.png'},
     {
         'info': 'upcoming',
         'name': 'Upcoming{1}{0}',
+        'spa': 'Próximas{1}{0}',
         'types': ['movie'],
         'icon': '{0}/resources/icons/tmdb/upcoming.png'},
     {
         'info': 'trending_day',
         'name': '{0}{1}Trending Today',
+        'spa': '{0}{1}en Tendencia Hoy',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/upcoming.png'},
     {
         'info': 'trending_week',
         'name': '{0}{1}Trending This Week',
+        'spa': '{0}{1}en Tendencia esta Semana',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/upcoming.png'},
     {
         'info': 'now_playing',
         'name': 'In Theatres',
+        'spa': 'En Cines',
         'types': ['movie'],
         'icon': '{0}/resources/icons/tmdb/intheatres.png'},
     {
         'info': 'airing_today',
         'name': 'Airing Today',
+        'spa': 'Al Aire Hoy',
         'types': ['tv'],
         'icon': '{0}/resources/icons/tmdb/airing.png'},
     {
         'info': 'on_the_air',
         'name': 'Currently Airing',
+        'spa': 'Al Aire Actualmente',
         'types': ['tv'],
         'icon': '{0}/resources/icons/tmdb/airing.png'},
     {
         'info': 'genres',
         'name': '{0}{1}Genres',
+        'spa': 'Géneros de {0}{1}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/genre.png'},
     {
         'info': 'revenue_movies',
         'name': 'Highest Revenue{1}{0}',
+        'spa': '{1}{0} con Éxito en Ganacias',
         'types': ['movie'],
         'icon': '{0}/resources/poster.png'},
     {
         'info': 'most_voted',
         'name': 'Most Voted{1}{0}',
+        'spa': '{1}{0} Más Votadas',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/poster.png'}]
 
@@ -152,101 +173,121 @@ BASEDIR_TRAKT = [
     {
         'info': 'trakt_collection',
         'name': '{0}{1}Collection',
+        'spa': '{0}{1}en Colección',
         'icon': '{0}/resources/icons/trakt/watchlist.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_watchlist',
         'name': '{0}{1}Watchlist',
+        'spa': '{0}{1}en Watchlist',
         'icon': '{0}/resources/icons/trakt/watchlist.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_history',
         'name': 'Your Recently Watched{1}{0}',
+        'spa': '{1}{0} Vistas Recientemente',
         'icon': '{0}/resources/icons/trakt/recentlywatched.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_mostwatched',
         'name': 'Your Most Watched{1}{0}',
+        'spa': '{1}{0} más Vistas',
         'icon': '{0}/resources/icons/trakt/mostwatched.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_inprogress',
         'name': 'Your In-Progress{1}{0}',
+        'spa': '{1}{0} en Progreso',
         'icon': '{0}/resources/icons/trakt/inprogress.png',
         'types': ['tv']},
     {
         'info': 'trakt_nextepisodes',
         'name': 'Your Next Episodes',
+        'spa': 'Próximos Episodios',
         'icon': '{0}/resources/icons/trakt/inprogress.png',
         'types': ['tv']},
     {
         'info': 'trakt_recommendations',
         'name': '{0}{1}Recommended For You',
+        'spa': '{0}{1}Recomendadas Para Ti',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becauseyouwatched',
         'name': 'Based on Recently Watched{1}{0}',
+        'spa': 'Basadas en tus{1}{0} Vistas Recientemente',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becausemostwatched',
         'name': 'Based on Most Watched{1}{0}',
+        'spa': 'Basadas en tus{1}{0} más Vistas',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_myairing',
         'name': 'Your{1}{0}{1}Airing This Week',
+        'spa': '{1}{0}{1}al Aire esta Semana',
         'icon': '{0}/resources/icons/trakt/airing.png',
         'types': ['tv']},
     {
         'info': 'trakt_calendar',
         'name': 'Your{1}{0}{1}Calendar',
+        'spa': 'Tu Calendario de{1}{0}{1}',
         'icon': '{0}/resources/icons/trakt/calendar.png',
         'types': ['tv']},
     {
         'info': 'trakt_trending',
         'name': 'Trending{1}{0}',
+        'spa': '{1}{0} en Tendencia',
         'icon': '{0}/resources/icons/trakt/trend.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_popular',
         'name': 'Popular{1}{0}',
+        'spa': '{1}{0} Populares',
         'icon': '{0}/resources/icons/trakt/popular.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_mostplayed',
         'name': 'Most Played{1}{0}',
+        'spa': '{1}{0} Más Vistas',
         'icon': '{0}/resources/icons/trakt/mostplayed.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_anticipated',
         'name': 'Anticipated{1}{0}',
+        'spa': '{1}{0} Más Anticipadas',
         'icon': '{0}/resources/icons/trakt/anticipated.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_boxoffice',
         'name': 'Top 10 Box Office{1}{0}',
+        'spa': '{1}{0} del Top 10 Box Office',
         'icon': '{0}/resources/icons/trakt/boxoffice.png',
         'types': ['movie']},
     {
         'info': 'trakt_trendinglists',
         'name': 'Trending Lists',
+        'spa': 'Listas en Tendencia',
         'icon': '{0}/resources/icons/trakt/trendinglist.png',
         'types': ['both']},
     {
         'info': 'trakt_popularlists',
         'name': 'Popular Lists',
+        'spa': 'Listas Populares',
         'icon': '{0}/resources/icons/trakt/popularlist.png',
         'types': ['both']},
     {
         'info': 'trakt_likedlists',
         'name': 'Liked Lists',
+        'spa': 'Listas con tus Likes',
         'icon': '{0}/resources/icons/trakt/likedlist.png',
         'types': ['both']},
     {
         'info': 'trakt_mylists',
         'name': 'Your Lists',
+        'spa': 'Tus Listas',
         'icon': '{0}/resources/icons/trakt/mylists.png',
         'types': ['both']}]
 
@@ -254,56 +295,67 @@ BASEDIR_RANDOM = [
     {
         'info': 'random_genres',
         'name': 'Random{1}{0}{1}Genre',
+        'spa': 'Género Aleatorio de{1}{0}{1}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/genre.png'},
     {
         'info': 'trakt_becauseyouwatched',
         'name': 'Based on Recently Watched{1}{0}',
+        'spa': 'Basadas en {1}{0} Vistas Recientemente',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becausemostwatched',
         'name': 'Based on Most Watched{1}{0}',
+        'spa': 'Basadas en{1}{0} Más Vistas',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_trending',
         'name': 'Random Trending{1}{0}',
+        'spa': '{1}{0} Aleatorias en Tendencia',
         'icon': '{0}/resources/icons/trakt/trend.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_popular',
         'name': 'Random Popular{1}{0}',
+        'spa': '{1}{0}Populares Aleatorias',
         'icon': '{0}/resources/icons/trakt/popular.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_mostplayed',
         'name': 'Random Most Played{1}{0}',
+        'spa': '{1}{0} Aleatorias Más Vistas',
         'icon': '{0}/resources/icons/trakt/mostplayed.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_anticipated',
         'name': 'Random Anticipated{1}{0}',
+        'spa': '{1}{0} Aleatorias Más Anticipadas',
         'icon': '{0}/resources/icons/trakt/anticipated.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_trendinglists',
         'name': 'Random Trending List',
+        'spa': 'Listas en Tendencia Aleatorias',
         'icon': '{0}/resources/icons/trakt/trendinglist.png',
         'types': ['both']},
     {
         'info': 'random_popularlists',
         'name': 'Random Popular List',
+        'spa': 'Listas Populares Aleatorias',
         'icon': '{0}/resources/icons/trakt/popularlist.png',
         'types': ['both']},
     {
         'info': 'random_likedlists',
         'name': 'Random Liked List',
+        'spa': 'Listas Aleatorias con Likes',
         'icon': '{0}/resources/icons/trakt/likedlist.png',
         'types': ['both']},
     {
         'info': 'random_mylists',
         'name': 'Random Your List',
+        'spa': 'Tu Lista Aleatoria',
         'icon': '{0}/resources/icons/trakt/mylists.png',
         'types': ['both']}]
 
@@ -311,6 +363,7 @@ BASEDIR_DISCOVER = [
     {
         'info': 'user_discover',
         'name': 'Discover{1}{0}',
+        'spa': 'Descubre{1}{0}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/search.png'}]
 
@@ -341,91 +394,109 @@ DETAILED_CATEGORIES = [
     {
         'info': 'cast',
         'name': 'Cast',
+        'spa': 'Cast',
         'icon': '{0}/resources/icons/tmdb/cast.png',
         'types': ['movie', 'tv']},
     {
         'info': 'recommendations',
         'name': 'Recommended',
+        'spa': 'Recomendadas',
         'icon': '{0}/resources/icons/tmdb/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'similar',
         'name': 'Similar',
+        'spa': 'Similar',
         'icon': '{0}/resources/icons/tmdb/similar.png',
         'types': ['movie', 'tv']},
     {
         'info': 'crew',
         'name': 'Crew',
+        'spa': 'Equipo',
         'icon': '{0}/resources/icons/tmdb/cast.png',
         'types': ['movie', 'tv']},
     {
         'info': 'posters',
         'name': 'Posters',
+        'spa': 'Posters',
         'icon': '{0}/resources/icons/tmdb/images.png',
         'types': ['movie', 'tv']},
     {
         'info': 'fanart',
         'name': 'Fanart',
+        'spa': 'Fanart',
         'icon': '{0}/resources/icons/tmdb/images.png',
         'types': ['movie', 'tv']},
     {
         'info': 'movie_keywords',
         'name': 'Keywords',
+        'spa': 'Palabras Clave',
         'icon': '{0}/resources/icons/tmdb/tags.png',
         'types': ['movie']},
     {
         'info': 'reviews',
         'name': 'Reviews',
+        'spa': 'Reseñas',
         'icon': '{0}/resources/icons/tmdb/reviews.png',
         'types': ['movie', 'tv']},
     {
         'info': 'stars_in_movies',
         'name': 'Cast in Movies',
+        'spa': 'Cast en Películas',
         'icon': '{0}/resources/icons/tmdb/movies.png',
         'types': ['person']},
     {
         'info': 'stars_in_tvshows',
         'name': 'Cast in TV Shows',
+        'spa': 'Cast en Series',
         'icon': '{0}/resources/icons/tmdb/tv.png',
         'types': ['person']},
     {
         'info': 'crew_in_movies',
         'name': 'Crew in Movies',
+        'spa': 'Equipo en Películas',
         'icon': '{0}/resources/icons/tmdb/movies.png',
         'types': ['person']},
     {
         'info': 'crew_in_tvshows',
         'name': 'Crew in TV Shows',
+        'spa': 'Equipo en Series',
         'icon': '{0}/resources/icons/tmdb/tv.png',
         'types': ['person']},
     {
         'info': 'images',
         'name': 'Images',
+        'spa': 'Imágenes',
         'icon': '{0}/resources/icons/tmdb/images.png',
         'types': ['person']},
     {
         'info': 'seasons',
         'name': 'Seasons',
+        'spa': 'Temporadas',
         'icon': '{0}/resources/icons/tmdb/episodes.png',
         'types': ['tv']},
     {
         'info': 'episode_cast',
         'name': 'Cast',
+        'spa': 'Cast',
         'icon': '{0}/resources/icons/tmdb/cast.png',
         'types': ['episode']},
     {
         'info': 'episode_thumbs',
         'name': 'Thumbs',
+        'spa': 'Miniaturas',
         'icon': '{0}/resources/icons/tmdb/images.png',
         'types': ['episode']},
     {
         'info': 'videos',
         'name': 'Videos',
+        'spa': 'Videos',
         'icon': '{0}/resources/icons/tmdb/movies.png',
         'types': ['movie', 'tv', 'episode']},
     {
         'info': 'trakt_inlists',
         'name': 'In Trakt Lists',
+        'spa': 'Listas en Trakt',
         'icon': '{0}/resources/icons/tmdb/trakt.png',
         'url_key': 'imdb_id',
         'types': ['movie', 'tv']}]
@@ -716,7 +787,7 @@ USER_DISCOVER_LISTITEMS_MOVIES = USER_DISCOVER_LISTITEMS_START + [
     {'label': 'Primary Release Date ( < or = )', 'url': {'info': 'user_discover', 'method': 'primary_release_date.lte'}},
     {'label': 'Release Date ( > or = )', 'url': {'info': 'user_discover', 'method': 'release_date.gte'}},
     {'label': 'Release Date ( < or = )', 'url': {'info': 'user_discover', 'method': 'release_date.lte'}},
-    {'label': 'Release Type', 'url': {'info': 'user_discover', 'method': 'with_release_type'}}] + USER_DISCOVER_LISTITEMS_FINISH
+    {'label': 'Release Type', 'url': {'info': 'user_discover', 'method': 'release_type'}}] + USER_DISCOVER_LISTITEMS_FINISH
 
 USER_DISCOVER_LISTITEMS_TVSHOWS = USER_DISCOVER_LISTITEMS_START + [
     {'label': 'With Networks', 'url': {'info': 'user_discover', 'method': 'with_networks'}},

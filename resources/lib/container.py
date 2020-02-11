@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import xbmc
 import xbmcgui
@@ -924,7 +926,7 @@ class Container(Plugin):
                     if xbmc.getCondVisibility("Window.IsMedia"):
                         url['nextpage'] = 'True'
 
-                    label = i.get('name').format('', '') if self.params.get('info') in ['dir_movie', 'dir_tv', 'dir_person'] else i.get('name').format(utils.type_convert(t, 'plural'), ' ')
+                    label = i.get('spa').format('', '') if self.params.get('info') in ['dir_movie', 'dir_tv', 'dir_person'] else i.get('spa').format(utils.type_convert(t, 'plural'), ' ')
 
                     listitem = ListItem(label=label, icon=i.get('icon', '').format(self.addonpath))
                     listitem.create_listitem(self.handle, **url)
