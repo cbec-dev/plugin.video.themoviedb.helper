@@ -691,7 +691,7 @@ class Container(Plugin):
         url['info'] = 'search'
 
         # Create first search item
-        listitem = ListItem(label='Search {}'.format(utils.type_convert(self.params.get('type'), 'plural')), icon=icon)
+        listitem = ListItem(label='Buscar {}'.format(utils.type_convert(self.params.get('type'), 'plural')), icon=icon)
         listitem.create_listitem(self.handle, **url)
 
         # Create cached history searches
@@ -707,7 +707,7 @@ class Container(Plugin):
             url['info'] = 'dir_search'
             url['clearcache'] = 'True'
             url.pop('query', '')
-            listitem = ListItem(label='Clear Search History', icon=icon)
+            listitem = ListItem(label='Borrar Historial de Búsqueda', icon=icon)
             listitem.create_listitem(self.handle, **url)
 
         # Finish container
