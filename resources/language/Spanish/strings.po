@@ -219,7 +219,7 @@ msgstr "A Continuación"
 #: /resources/lib/container.py
 msgctxt "#32044"
 msgid "Enter Search Query"
-msgstr "Ingresa Query de Búsqueda"
+msgstr "Ingresa Parámetros de Búsqueda"
 
 #: /resources/lib/container.py
 msgctxt "#32045"
