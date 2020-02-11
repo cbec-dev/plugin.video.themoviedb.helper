@@ -13,17 +13,17 @@ LANGUAGES = [
 
 TYPE_CONVERSION = {
     'movie': {
-        'plural': 'Películas',
+        'plural': '(Películas)',
         'container': 'movies',
         'trakt': 'movie',
         'dbtype': 'movie'},
     'tv': {
-        'plural': 'Series',
+        'plural': '(Series)',
         'container': 'tvshows',
         'trakt': 'show',
         'dbtype': 'tvshow'},
     'person': {
-        'plural': 'Personas',
+        'plural': '(Personas)',
         'container': 'actors',
         'trakt': '',
         'dbtype': 'video'},
@@ -92,26 +92,26 @@ BASEDIR_MAIN = [
     {
         'info': 'dir_trakt',
         'name': 'Trakt',
-        'spa': 'Trakt',
+        'spa': 'Tu Progreso',
         'icon': '{0}/resources/trakt.png'}]
 
 BASEDIR_TMDB = [
     {
         'info': 'dir_search',
         'name': 'Search{1}{0}',
-        'spa': 'Buscar{1}{0}',
+        'spa': 'Buscar...{1}{0}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/search.png'},
     {
         'info': 'popular',
         'name': 'Popular{1}{0}',
-        'spa': 'Popular{1}{0}',
+        'spa': 'Populares{1}{0}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/popular.png'},
     {
         'info': 'top_rated',
         'name': 'Top Rated{1}{0}',
-        'spa': '{1}{0}Mejor Calificadas',
+        'spa': 'Mejor Calificadas{1}{0}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/toprated.png'},
     {
@@ -123,13 +123,13 @@ BASEDIR_TMDB = [
     {
         'info': 'trending_day',
         'name': '{0}{1}Trending Today',
-        'spa': '{0}{1}en Tendencia Hoy',
+        'spa': 'Tendencia Hoy {0}{1}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/upcoming.png'},
     {
         'info': 'trending_week',
         'name': '{0}{1}Trending This Week',
-        'spa': '{0}{1}en Tendencia esta Semana',
+        'spa': 'Tendencia esta Semana {0}{1}',
         'types': ['movie', 'tv', 'person'],
         'icon': '{0}/resources/icons/tmdb/upcoming.png'},
     {
@@ -153,19 +153,19 @@ BASEDIR_TMDB = [
     {
         'info': 'genres',
         'name': '{0}{1}Genres',
-        'spa': 'Géneros de {0}{1}',
+        'spa': 'Géneros {0}{1}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/genre.png'},
     {
         'info': 'revenue_movies',
         'name': 'Highest Revenue{1}{0}',
-        'spa': '{1}{0} con Éxito en Ganacias',
+        'spa': 'Éxito en Ganacias{1}{0}',
         'types': ['movie'],
         'icon': '{0}/resources/poster.png'},
     {
         'info': 'most_voted',
         'name': 'Most Voted{1}{0}',
-        'spa': '{1}{0} Más Votadas',
+        'spa': 'Más Votadas{1}{0}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/poster.png'}]
 
@@ -173,31 +173,31 @@ BASEDIR_TRAKT = [
     {
         'info': 'trakt_collection',
         'name': '{0}{1}Collection',
-        'spa': '{0}{1}en Colección',
+        'spa': 'Colección {0}{1}',
         'icon': '{0}/resources/icons/trakt/watchlist.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_watchlist',
         'name': '{0}{1}Watchlist',
-        'spa': '{0}{1}en Watchlist',
+        'spa': 'Watchlist {0}{1}',
         'icon': '{0}/resources/icons/trakt/watchlist.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_history',
         'name': 'Your Recently Watched{1}{0}',
-        'spa': '{1}{0} Vistas Recientemente',
+        'spa': 'Vistas Recientemente{1}{0}',
         'icon': '{0}/resources/icons/trakt/recentlywatched.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_mostwatched',
         'name': 'Your Most Watched{1}{0}',
-        'spa': '{1}{0} más Vistas',
+        'spa': 'Más Vistas{1}{0}',
         'icon': '{0}/resources/icons/trakt/mostwatched.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_inprogress',
         'name': 'Your In-Progress{1}{0}',
-        'spa': '{1}{0} en Progreso',
+        'spa': 'En Progreso{1}{0}',
         'icon': '{0}/resources/icons/trakt/inprogress.png',
         'types': ['tv']},
     {
@@ -209,61 +209,61 @@ BASEDIR_TRAKT = [
     {
         'info': 'trakt_recommendations',
         'name': '{0}{1}Recommended For You',
-        'spa': '{0}{1}Recomendadas Para Ti',
+        'spa': 'Recomendadas para Ti {0}{1}',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becauseyouwatched',
         'name': 'Based on Recently Watched{1}{0}',
-        'spa': 'Basadas en tus{1}{0} Vistas Recientemente',
+        'spa': 'Basadas en tus Vistas Recientes{1}{0}',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becausemostwatched',
         'name': 'Based on Most Watched{1}{0}',
-        'spa': 'Basadas en tus{1}{0} más Vistas',
+        'spa': 'Basadas en tus más Vistas{1}{0}',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_myairing',
         'name': 'Your{1}{0}{1}Airing This Week',
-        'spa': '{1}{0}{1}al Aire esta Semana',
+        'spa': 'Al Aire esta Semana{1}{0}{1}',
         'icon': '{0}/resources/icons/trakt/airing.png',
         'types': ['tv']},
     {
         'info': 'trakt_calendar',
         'name': 'Your{1}{0}{1}Calendar',
-        'spa': 'Tu Calendario de{1}{0}{1}',
+        'spa': 'Tu Calendario{1}{0}{1}',
         'icon': '{0}/resources/icons/trakt/calendar.png',
         'types': ['tv']},
     {
         'info': 'trakt_trending',
         'name': 'Trending{1}{0}',
-        'spa': '{1}{0} en Tendencia',
+        'spa': 'Tendencia{1}{0}',
         'icon': '{0}/resources/icons/trakt/trend.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_popular',
         'name': 'Popular{1}{0}',
-        'spa': '{1}{0} Populares',
+        'spa': 'Populares{1}{0}',
         'icon': '{0}/resources/icons/trakt/popular.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_mostplayed',
         'name': 'Most Played{1}{0}',
-        'spa': '{1}{0} Más Vistas',
+        'spa': 'Más Vistas{1}{0}',
         'icon': '{0}/resources/icons/trakt/mostplayed.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_anticipated',
         'name': 'Anticipated{1}{0}',
-        'spa': '{1}{0} Más Anticipadas',
+        'spa': 'Más Anticipadas{1}{0}',
         'icon': '{0}/resources/icons/trakt/anticipated.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_boxoffice',
         'name': 'Top 10 Box Office{1}{0}',
-        'spa': '{1}{0} del Top 10 Box Office',
+        'spa': 'Top 10 del Box Office{1}{0}',
         'icon': '{0}/resources/icons/trakt/boxoffice.png',
         'types': ['movie']},
     {
@@ -295,43 +295,43 @@ BASEDIR_RANDOM = [
     {
         'info': 'random_genres',
         'name': 'Random{1}{0}{1}Genre',
-        'spa': 'Género Aleatorio de{1}{0}{1}',
+        'spa': 'Género Aleatorio{1}{0}{1}',
         'types': ['movie', 'tv'],
         'icon': '{0}/resources/icons/tmdb/genre.png'},
     {
         'info': 'trakt_becauseyouwatched',
         'name': 'Based on Recently Watched{1}{0}',
-        'spa': 'Basadas en {1}{0} Vistas Recientemente',
+        'spa': 'Basadas en Vistas Recientes{1}{0}',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'trakt_becausemostwatched',
         'name': 'Based on Most Watched{1}{0}',
-        'spa': 'Basadas en{1}{0} Más Vistas',
+        'spa': 'Basadas en Más Vistas{1}{0}',
         'icon': '{0}/resources/icons/trakt/recommended.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_trending',
         'name': 'Random Trending{1}{0}',
-        'spa': '{1}{0} Aleatorias en Tendencia',
+        'spa': 'Aleatorias en Tendencia{1}{0}',
         'icon': '{0}/resources/icons/trakt/trend.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_popular',
         'name': 'Random Popular{1}{0}',
-        'spa': '{1}{0}Populares Aleatorias',
+        'spa': 'Populares Aleatorias{1}{0}',
         'icon': '{0}/resources/icons/trakt/popular.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_mostplayed',
         'name': 'Random Most Played{1}{0}',
-        'spa': '{1}{0} Aleatorias Más Vistas',
+        'spa': 'Aleatorias Más Vistas{1}{0}',
         'icon': '{0}/resources/icons/trakt/mostplayed.png',
         'types': ['movie', 'tv']},
     {
         'info': 'random_anticipated',
         'name': 'Random Anticipated{1}{0}',
-        'spa': '{1}{0} Aleatorias Más Anticipadas',
+        'spa': 'Aleatorias Más Anticipadas{1}{0}',
         'icon': '{0}/resources/icons/trakt/anticipated.png',
         'types': ['movie', 'tv']},
     {
