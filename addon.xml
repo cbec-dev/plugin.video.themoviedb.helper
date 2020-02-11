@@ -16,19 +16,19 @@ provider-name="jurialmunkey">
 <extension point="kodi.context.item">
   <menu id="kodi.core.main">
     <item library="context-watchlist.py">
-      <label>Add/Remove from Trakt Watchlist</label>
+      <label>Agregar/Quitar de Watchlist (Trakt)</label>
       <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
     </item>
     <item library="context-history.py">
-      <label>Add/Remove from Trakt History</label>
+      <label>Agregar/Quitar de Historial (Trakt)</label>
       <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
     </item>
     <item library="context-collection.py">
-      <label>Add/Remove from Trakt Collection</label>
+      <label>Agregar/Quitar de Colección (Trakt)</label>
       <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
     </item>
     <item library="context-library.py">
-      <label>Add to Kodi Library</label>
+      <label>Agregar a Biblioteca de Kodi</label>
       <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season)]</visible>
     </item>
   </menu>
