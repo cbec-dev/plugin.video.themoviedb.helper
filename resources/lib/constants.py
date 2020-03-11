@@ -158,6 +158,7 @@ BASEDIR_TMDB = [
     {
         'info': 'library_nextaired',
         'name': 'Next Aired Library',
+        'spa': 'Siguientes al Aire en Librería',
         'types': ['tv'],
         'icon': '{0}/resources/icons/tmdb/airing.png'},
     {
