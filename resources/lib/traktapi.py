@@ -142,8 +142,28 @@ class TraktAPI(RequestAPI):
         return self.use_cache(self.get_response_json, *args, **kwargs)
 
     def get_itemlist_sorted(self, *args, **kwargs):
-        response = self.get_response(*args)
+        response = self.get_response(*args, extended='full')
         items = response.json()
+        reverse = True if response.headers.get('X-Sort-How') == 'desc' else False
+        if response.headers.get('X-Sort-By') == 'rank':
+            return sorted(items, key=lambda i: i.get('rank'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'added':
+            return sorted(items, key=lambda i: i['listed_at'], reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'title':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('title'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'released':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('first_aired') if i.get('type') == 'show' else i.get(i.get('type'), {}).get('released'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'runtime':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('runtime'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'popularity':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('comment_count'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'percentage':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('rating'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'votes':
+            return sorted(items, key=lambda i: i.get(i.get('type'), {}).get('votes'), reverse=reverse)
+        elif response.headers.get('X-Sort-By') == 'random':
+            random.shuffle(items)
+            return items
         return sorted(items, key=lambda i: i['listed_at'], reverse=True)
 
     def get_itemlist_ranked(self, *args, **kwargs):
@@ -157,7 +177,7 @@ class TraktAPI(RequestAPI):
     def get_itemlist_sortedcached(self, *args, **kwargs):
         page = kwargs.pop('page', 1)
         limit = kwargs.pop('limit', 10)
-        kwparams = {'cache_name': self.cache_name + '.trakt.sortedlist', 'cache_days': 0.125}
+        kwparams = {'cache_name': self.cache_name + '.trakt.sortedlist.v2', 'cache_days': 0.125}
         items = self.use_cache(self.get_itemlist_sorted, *args, **kwparams)
         index_z = page * limit
         index_a = index_z - limit
@@ -305,6 +325,10 @@ class TraktAPI(RequestAPI):
             # utils.kodi_log('In-Progress -- Searching Next Episode For:\n{0}'.format(i), 2)
             progress = self.get_upnext(i[0], True)
             if progress and progress.get('next_episode'):
+                if (episodes and
+                        progress.get('next_episode', {}).get('season') == 1 and
+                        progress.get('next_episode', {}).get('number') == 1):
+                    continue
                 # utils.kodi_log('In-Progress -- Found Next Episode:\n{0}'.format(progress.get('next_episode')), 2)
                 season = progress.get('next_episode', {}).get('season') if episodes else None
                 episode = progress.get('next_episode', {}).get('number') if episodes else None
@@ -313,7 +337,7 @@ class TraktAPI(RequestAPI):
                 # utils.kodi_log('In-Progress -- Got Next Episode Details:\n{0}'.format(item), 2)
                 items.append(ListItem(library=self.library, **item))
                 n += 1
-        return items
+        return sorted(items, key=lambda i: i.infolabels.get('premiered'), reverse=True) if episodes and self.addon.getSettingString('trakt_nextepisodesort') == 'airdate' else items
 
     def get_airingshows(self, start_date=0, days=1):
         start_date = datetime.date.today() + datetime.timedelta(days=start_date)

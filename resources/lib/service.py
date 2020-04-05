@@ -111,6 +111,9 @@ class ServiceMonitor(Plugin):
             if self.cur_folder != self.pre_folder:
                 self.clear_properties()  # Clear props if the folder changed
                 self.pre_folder = self.cur_folder
+            if self.get_infolabel('Label') == '..':
+                self.clear_properties()
+                return  # Parent folder so clear properties and don't do look-up
 
             if self.dbtype in ['tvshows', 'seasons', 'episodes']:
                 tmdbtype = 'tv'
@@ -236,7 +239,10 @@ class ServiceMonitor(Plugin):
     def get_container(self):
         widgetid = utils.try_parse_int(self.home.getProperty('TMDbHelper.WidgetContainer'))
         self.container = 'Container({0}).'.format(widgetid) if widgetid else 'Container.'
-        self.containeritem = '{0}ListItem.'.format(self.container) if not xbmc.getCondVisibility("Window.IsVisible(DialogPVRInfo.xml) | Window.IsVisible(movieinformation)") else 'ListItem.'
+        self.containeritem = '{0}ListItem.'.format(self.container)
+        if xbmc.getCondVisibility("Window.IsVisible(DialogPVRInfo.xml) | Window.IsVisible(movieinformation)"):
+            if xbmc.getCondVisibility("!Skin.HasSetting(TMDbHelper.ForceWidgetContainer)"):
+                self.containeritem = 'ListItem.'  # In info dialog just use listitem unless force widget container set
 
     def get_dbtype(self):
         dbtype = xbmc.getInfoLabel('{0}DBTYPE'.format(self.containeritem))

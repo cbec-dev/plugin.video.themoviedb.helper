@@ -225,7 +225,8 @@ class Script(Plugin):
         while not self.monitor.abortRequested() and is_active:
             self.monitor.waitForAbort(0.5)
             is_active = xbmc.getCondVisibility("Window.IsVisible({})".format(self.params.get('call_auto')))
-        xbmc.executebuiltin('Action(Info)')
+        if not self.params.get('return'):
+            xbmc.executebuiltin('Action(Info)')
 
     def call_previous(self):
         self.prev_path()
@@ -385,6 +386,7 @@ class Script(Plugin):
                 finally:
                     vfs_file.close()
                 tmdb_id = content.replace('https://www.themoviedb.org/tv/', '')
+                tmdb_id = tmdb_id.replace('&islocal=True', '')
                 if not tmdb_id:
                     continue
 
